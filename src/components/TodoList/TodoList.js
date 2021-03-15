@@ -1,5 +1,5 @@
 import React from "react";
-import TodoItem from "../TodoItem/TodoItem";
+import Todo from "../TodoItem/TodoItem";
 import "./TodoList.css";
 
 function TodoList(props) {
@@ -9,7 +9,7 @@ function TodoList(props) {
         {props.todos.map((todo) => {
           return (
             <li className="list-group-item" >
-              <TodoItem {...todo} key={todo.id} />
+              <Todo {...todo} key={todo.id} onDelete={props.onDelete}/>             
             </li>
           );
         })}

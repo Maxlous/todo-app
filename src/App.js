@@ -48,6 +48,12 @@ class App extends Component {
     });
   };
 
+  deleteFun = (id) => {
+    const curVal = [...this.state.todos];
+    const newVal = curVal.filter(item => item.id !== id);
+    this.setState({todos: newVal}) 
+    }
+ 
   render() {
     return (
       <div className="App">
@@ -59,7 +65,7 @@ class App extends Component {
         />
         {this.state.todos.length > 0 && (
           <div className="list">
-            <TodoList todos={this.state.todos} />
+            <TodoList todos={this.state.todos} onDelete={this.deleteFun}/>
           </div>
         )}
       </div>
